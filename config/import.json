@@ -1,0 +1,74 @@
+{
+  "CAFE" : {
+    "supp_cond" : 120
+  },
+  "CHOCOLAT" : {
+    "supp_cond" : 100
+  },
+  "ROUSSE" : {
+    "cat" : "BIERE MT BLANC"
+  },
+  "BLONDE" : {
+    "cat" : "BIERE MT BLANC"
+  },
+  "BLANCHE" : {
+    "cat" : "BIERE MT BLANC"
+  },
+  "COCA" : {
+    "cat" : "SODA"
+  },
+  "COCA LIGHT" : {
+    "cat" : "SODA"
+  },
+  "COCA ZERO" : {
+    "cat" : "SODA"
+  },
+  "SPRITE" : {
+    "cat" : "SODA"
+  },
+  "ORANGINA" : {
+    "cat" : "SODA"
+  },
+  "PANACHE" : {
+    "cat" : "SODA"
+  },
+  "ICE TEA" : {
+    "cat" : "SODA"
+  },
+  "SCHWEPPES AGRUM" : {
+    "cat" : "SODA"
+  },
+  "PERRIER" : {
+    "cat" : "SODA"
+  },
+  "VIN ROUGE" : {
+    "cat" : "VIN"
+  },
+  "VIN BLANC" : {
+    "cat" : "VIN"
+  },
+  "MARS" : {
+    "cat" : "MARS/TWIX"
+  },
+  "TWIX" : {
+    "cat" : "MARS/TWIX"
+  },
+  "SNICKERS" : {
+    "cat" : "MARS/TWIX"
+  },
+  "BOUNTY" : {
+    "cat" : "MARS/TWIX"
+  },
+  "JUS ORANGE" : {
+    "cat" : "JUS DE FRUIT"
+  },
+  "JUS POMME" : {
+    "cat" : "JUS DE FRUIT"
+  },
+  "JUS FRAISE" : {
+    "cat" : "JUS DE FRUIT"
+  },
+  "JUS ABRICOT" : {
+    "cat" : "JUS DE FRUIT"
+  }
+}

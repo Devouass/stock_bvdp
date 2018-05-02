@@ -1,0 +1,53 @@
+{
+  "BIERE MT BLANC" : {
+    "div" : 12
+  },
+  "1664 50CL" : {
+    "div" : 24
+  },
+  "1664 33CL" : {
+    "div" : 24
+  },
+  "SODA" : {
+    "div" : 24
+  },
+  "JUS DE FRUIT" : {
+    "div" : 12
+  },
+  "EVIAN 50CL" : {
+    "div" : 24
+  },
+  "EVIAN 150CL" : {
+    "div" : 12
+  },
+  "SAN PELLEGRINO" : {
+    "div" : 24
+  },
+  "BADOIT" : {
+    "div" : 6
+  },
+  "petite CHIPS" : {
+    "div" : 42
+  },
+  "grande CHIPS" : {
+    "div" : 15
+  },
+  "CAFE": {
+    "div" : 6
+  },
+  "CHOCOLAT" : {
+    "div" : 10
+  },
+  "VIN" : {
+    "div" : 6
+  },
+  "TOBLERONE" : {
+    "div" : 24
+  },
+  "JAMBON" : {
+    "div": 16
+  },
+  "SAUCISSON" : {
+    "div": 50
+  }
+}

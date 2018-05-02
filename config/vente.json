@@ -1,0 +1,45 @@
+{
+  "EXPRESSO" : {
+    "CAFE" : 1
+  },
+  "EXPRESSO LAIT" : {
+    "CAFE" : 1
+  },
+  "EXPRESSO DOUBLE" : {
+    "CAFE" : 2
+  },
+  "GRAND CAFE" : {
+    "CAFE" : 1
+  },
+  "GRAND CAFE LAIT" : {
+    "CAFE" : 1
+  },
+  "CAPPUCINO" : {
+    "CAFE" : 1
+  },
+  "CAFE ALLONGE" : {
+    "CAFE" : 1
+  },
+  "CHOCOLAT CHAUD" : {
+    "CHOCOLAT" : 1
+  },
+  "VERRE DE VIN" : {
+    "VIN" : 0.2
+  },
+  "KIR" : {
+    "VIN" : 0.2
+  },
+  "BOUTEILLE de VIN" : {
+    "VIN" : 1
+  },
+  "SANDWICH JAMBON" : {
+    "JAMBON" : 1.5
+  },
+  "SANDWICH SAUCISSON" : {
+    "SAUCISSON" : 5
+  },
+  "SANDWICH MIX" : {
+    "JAMBON" : 1.35,
+    "SAUCISSON" : 0.5
+  }
+}
