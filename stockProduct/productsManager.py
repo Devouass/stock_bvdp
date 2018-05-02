@@ -11,6 +11,7 @@ from stockProduct.stockProduct import StockProduct
 class ProductManager(object):
 
     def __init__(self):
+        self._reporter = None
         self.products = {}
         self._confParser = ConfParser()
 
@@ -46,7 +47,10 @@ class ProductManager(object):
                         self.products[cat].addVente(quantity * factor)
             else:
                 if name not in self.products:
-                    print('no product name {n} selled'.format(n = name))
+                    tmp = "{n}".format(n = name)
+                    tmp += ' : pas de stock connu ou calculable'
+                    #print('tmp is {n}'.format(n = tmp))
+                    self._reporter.addReport(tmp)
                 else:
                     self.products[name].addVente(quantity)
 
@@ -62,11 +66,14 @@ class ProductManager(object):
     def saveProductsStock(self, saveFilePath):
         saveAsExcel(self.products, saveFilePath)
 
-    def calculateProductsStock(self, buyProductsFilePath, sellFilePath, saveFilePath):
+    def calculateProductsStock(self, buyProductsFilePath, sellFilePath, saveFilePath, reporter):
+        self._reporter = reporter
         self.getBuyProducts(buyProductsFilePath)
         self.getStock(sellFilePath)
         self.setProductsFormattageProperties()
+        self._reporter.addReport('\nécriture du rapport excel')
         self.saveProductsStock(saveFilePath)
+        self._reporter.addReport('rapport écrit, disponible ici : ' + saveFilePath)
         return self.products
 
 

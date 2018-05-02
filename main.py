@@ -1,11 +1,8 @@
 # -*- coding: UTF-8 -*-
+#!/usr/bin/python
 
-from stockProduct.productsManager import ProductManager
+from ui.uiManager import UiManager
 
-def getStock():
-    productManager = ProductManager()
-    productManager.calculateProductsStock('utils/achats.xlsx', 'utils/Export.csv', 'utils/res.xlsx')
-
-#start UI
-
-getStock()
+if __name__ == '__main__':
+    uiManager = UiManager()
+    uiManager.startUi()
