@@ -6,4 +6,6 @@ def getStock():
     productManager = ProductManager()
     productManager.calculateProductsStock('utils/achats.xlsx', 'utils/Export.csv', 'utils/res.xlsx')
 
+#start UI
+
 getStock()
