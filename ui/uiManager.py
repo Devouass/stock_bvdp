@@ -5,6 +5,7 @@ import sys
 
 from tkinter import *
 from tkinter.filedialog import *
+from tkinter.messagebox import *
 
 from stockProduct.productsManager import ProductManager
 from ui.stockReporter import StockReporter
@@ -56,6 +57,21 @@ class UiManager(object):
         filename = askopenfilename()
         self._achatFilePath.set(filename)
 
+    def error(self, message):
+        showerror('format de fichier', message)
+
+    def checkFileValidity(self):
+        validity = True
+        if not self._achatFilePath.get() or not self._achatFilePath.get().endswith('.xlsx'):
+            validity = False
+            self.error('veuillez selectionner un fichier d\'achat valide\nun classeur excel au format xlsx')
+        else:
+            if not self._venteFilePath.get() or not self._venteFilePath.get().endswith('.csv'):
+                validity = False
+                self.error('veuillez selectionner un fichier d\'export de caisse valide\nun export au format csv')
+        return validity
+
     def calculateStock(self):
-        self._stockReporter.addReport('début du calcul du stock\n')
-        self._productManager.calculateProductsStock(self._achatFilePath.get(), self._venteFilePath.get(), 'utils/res.xlsx', self._stockReporter)
+        if self.checkFileValidity():
+            self._stockReporter.addReport('début du calcul du stock\n')
+            self._productManager.calculateProductsStock(self._achatFilePath.get(), self._venteFilePath.get(), 'utils/res.xlsx', self._stockReporter)
