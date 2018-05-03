@@ -11,7 +11,10 @@ def checkExcelExists(filePath):
 
 def saveAsExcel(products, filePath):
     if checkExcelExists(filePath):
-        os.remove(filePath)
+        try:
+            os.remove(filePath)
+        except PermissionError:
+            return False
 
     productsToConvert = {
         'products' : []
@@ -44,3 +47,4 @@ def saveAsExcel(products, filePath):
     worksheet.set_column('E:E', 18, cell_format)
     worksheet.set_column('G:G', 18)
     writer.save()
+    return True

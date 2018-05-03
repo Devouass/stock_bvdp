@@ -19,3 +19,7 @@ class StockReporter(object):
             self._stringVar.set(tmp)
 
         sys.stdout.flush()
+
+    def reset(self):
+        self._stringVar.set("")
+        sys.stdout.flush()

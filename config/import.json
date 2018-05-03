@@ -1,9 +1,9 @@
 {
   "CAFE" : {
-    "supp_cond" : 120
+    "supp_cond" : 130
   },
   "CHOCOLAT" : {
-    "supp_cond" : 100
+    "supp_cond" : 50
   },
   "ROUSSE" : {
     "cat" : "BIERE MT BLANC"

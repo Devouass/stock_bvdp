@@ -64,7 +64,7 @@ class ProductManager(object):
                         self.products[name].setDivFormattage(factor)
 
     def saveProductsStock(self, saveFilePath):
-        saveAsExcel(self.products, saveFilePath)
+        return saveAsExcel(self.products, saveFilePath)
 
     def calculateProductsStock(self, buyProductsFilePath, sellFilePath, saveFilePath, reporter):
         self._reporter = reporter
@@ -72,9 +72,12 @@ class ProductManager(object):
         self.getStock(sellFilePath)
         self.setProductsFormattageProperties()
         self._reporter.addReport('\nécriture du rapport excel')
-        self.saveProductsStock(saveFilePath)
-        self._reporter.addReport('rapport écrit, disponible ici : ' + saveFilePath)
-        return self.products
+        result = self.saveProductsStock(saveFilePath)
+        if result:
+            self._reporter.addReport('rapport écrit, disponible ici : ' + saveFilePath)
+        else:
+            self._reporter.addReport('impossible d\'ecrire le rapport excel')
+        return result
 
 
 

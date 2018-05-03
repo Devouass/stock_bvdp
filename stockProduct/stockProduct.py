@@ -16,7 +16,8 @@ class StockProduct(object):
         self._div = div
 
     def addAchat(self, quantity, cond):
-        self._achat += ( quantity * cond * self._supp_cond )
+        if quantity:
+            self._achat += ( quantity * cond * self._supp_cond )
 
     def addVente(self, vente):
         self._vente += vente

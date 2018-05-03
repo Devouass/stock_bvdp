@@ -13,16 +13,22 @@ from ui.stockReporter import StockReporter
 
 class UiManager(object):
 
+    #ACHAT_FILE_PATH = "C:/Users/bvdp_/Desktop/achats.xlsx"
+    #VENTE_FILE_PATH = "C:/Users/bvdp_/Desktop/Export.csv"
+    #STOCK_FILE_PATH = "C:/Users/bvdp_/Desktop/stock.xlsx"
+    ACHAT_FILE_PATH = "C:/Users/jdevo/Desktop/achats.xlsx"
+    VENTE_FILE_PATH = "C:/Users/jdevo/Desktop/Export.csv"
+    STOCK_FILE_PATH = "C:/Users/jdevo/Desktop/stock.xlsx"
+
     def __init__(self):
         self._fenetre = Tk()
         self._productManager = ProductManager()
         self._stockReporter = StockReporter()
-        self._achatFilePath = ""
-        self._venteFilePath = ""
+        self._achatFilePath = None
+        self._venteFilePath = None
 
     #start UI
     def startUi(self):
-
         self._fenetre.title('Stock Calculateur')
         self._fenetre.geometry("750x500")
         self._fenetre.resizable(0,1)
@@ -31,13 +37,13 @@ class UiManager(object):
 
         Label(text='fichier d\'achat (xls) :', width=15, anchor='w').grid(row=1,column=0,padx=5,pady=10)
         self._achatFilePath = StringVar()
-        self._achatFilePath.set("C:/Users/jdevo/Documents/code_bvdp/utils/achats.xlsx")
+        self._achatFilePath.set(self.ACHAT_FILE_PATH)
         Entry(self._fenetre, textvariable=self._achatFilePath, width=80).grid(row=1,column=1,padx=5,pady=10)
         Button(self._fenetre, text="parcourir", command=self.getAchatFileName, width=12).grid(row=1, column=2,padx=5,pady=10)
 
         Label(text='fichier d\'export (csv) :', width=15, anchor='w').grid(row=2,column=0,padx=5,pady=10)
         self._venteFilePath = StringVar()
-        self._venteFilePath.set("C:/Users/jdevo/Documents/code_bvdp/utils/Export.csv")
+        self._venteFilePath.set(self.VENTE_FILE_PATH)
         Entry(self._fenetre, textvariable=self._venteFilePath, width=80).grid(row=2,column=1,padx=5,pady=10)
         Button(self._fenetre, text="parcourir", command=self.getExportFileName, width=12).grid(row=2, column=2,padx=5,pady=10)
 
@@ -73,6 +79,12 @@ class UiManager(object):
         return validity
 
     def calculateStock(self):
+        self._stockReporter.reset()
         if self.checkFileValidity():
             self._stockReporter.addReport('début du calcul du stock\n')
-            self._productManager.calculateProductsStock(self._achatFilePath.get(), self._venteFilePath.get(), 'utils/res.xlsx', self._stockReporter)
+            result = self._productManager.calculateProductsStock(self._achatFilePath.get(), self._venteFilePath.get(), self.STOCK_FILE_PATH, self._stockReporter)
+            if result:
+                os.startfile(self.STOCK_FILE_PATH)
+            else:
+                showerror('erreur','fichier stock.xlsx déjà ouvert')
+                self._productManager.resetProducts()
