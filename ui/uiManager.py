@@ -2,6 +2,7 @@
 #!/usr/bin/python
 
 import sys
+import os
 
 from tkinter import *
 from tkinter.filedialog import *
@@ -62,11 +63,11 @@ class UiManager(object):
 
     def checkFileValidity(self):
         validity = True
-        if not self._achatFilePath.get() or not self._achatFilePath.get().endswith('.xlsx'):
+        if not self._achatFilePath.get() or not self._achatFilePath.get().endswith('.xlsx') or not os.path.isfile(self._achatFilePath.get()):
             validity = False
             self.error('veuillez selectionner un fichier d\'achat valide\nun classeur excel au format xlsx')
         else:
-            if not self._venteFilePath.get() or not self._venteFilePath.get().endswith('.csv'):
+            if not self._venteFilePath.get() or not self._venteFilePath.get().endswith('.csv') or not os.path.isfile(self._venteFilePath.get()):
                 validity = False
                 self.error('veuillez selectionner un fichier d\'export de caisse valide\nun export au format csv')
         return validity
