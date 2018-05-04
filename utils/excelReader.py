@@ -23,7 +23,7 @@ def formatJson(jsonToFormat):
             elif key == 'cond.':
                 data['cond'] = value
             else:
-                if value:
+                if not key == 'total' and value:
                     data['quantity'] += int(value)
         formattedJson[name] = data
 

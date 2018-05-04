@@ -13,12 +13,12 @@ from ui.stockReporter import StockReporter
 
 class UiManager(object):
 
-    #ACHAT_FILE_PATH = "C:/Users/bvdp_/Desktop/achats.xlsx"
-    #VENTE_FILE_PATH = "C:/Users/bvdp_/Desktop/Export.csv"
-    #STOCK_FILE_PATH = "C:/Users/bvdp_/Desktop/stock.xlsx"
-    ACHAT_FILE_PATH = "C:/Users/jdevo/Desktop/achats.xlsx"
-    VENTE_FILE_PATH = "C:/Users/jdevo/Desktop/Export.csv"
-    STOCK_FILE_PATH = "C:/Users/jdevo/Desktop/stock.xlsx"
+    ACHAT_FILE_PATH = "C:/Users/bvdp_/Desktop/achats.xlsx"
+    VENTE_FILE_PATH = "C:/Users/bvdp_/Desktop/Export.csv"
+    STOCK_FILE_PATH = "C:/Users/bvdp_/Desktop/stock.xlsx"
+    #ACHAT_FILE_PATH = "C:/Users/jdevo/Desktop/achats.xlsx"
+    #VENTE_FILE_PATH = "C:/Users/jdevo/Desktop/Export.csv"
+    #STOCK_FILE_PATH = "C:/Users/jdevo/Desktop/stock.xlsx"
 
     def __init__(self):
         self._fenetre = Tk()
