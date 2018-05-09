@@ -5,6 +5,12 @@
   "CHOCOLAT" : {
     "supp_cond" : 50
   },
+  "TARTE MYRTILLES" : {
+    "supp_cond" : 8
+  },
+  "TARTE POMMES" : {
+    "supp_cond" : 10
+  },
   "ROUSSE" : {
     "cat" : "BIERE MT BLANC"
   },

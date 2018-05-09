@@ -32,14 +32,13 @@
   "BOUTEILLE de VIN" : {
     "VIN" : 1
   },
-  "SANDWICH JAMBON" : {
+  "JAMBON" : {
     "JAMBON" : 1.5
   },
-  "SANDWICH SAUCISSON" : {
+  "SAUCISSON" : {
     "SAUCISSON" : 4
   },
-  "SANDWICH MIX" : {
-    "JAMBON" : 1.35,
-    "SAUCISSON" : 0.5
+  "JAMBON-FROMAGE" : {
+    "JAMBON" : 1.5
   }
 }
